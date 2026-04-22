@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 358 85% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 89%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 89%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 89%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 358 85% 52%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-serif font-medium;
+  }
+  p, span, li, a {
+    @apply font-sans;
+  }
+  /* Prevent horizontal scrolling on mobile */
+  html, body {
+    @apply overflow-x-hidden;
+    width: 100%;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .heading-xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold;
+  }
+  .heading-lg {
+    @apply text-2xl sm:text-3xl md:text-4xl font-serif font-medium;
+  }
+  .heading-md {
+    @apply text-xl sm:text-2xl md:text-3xl font-serif;
+  }
+  .heading-sm {
+    @apply text-lg sm:text-xl md:text-2xl font-serif;
+  }
+  .btn-primary {
+    @apply bg-lifeway-red text-white py-2 px-4 md:py-3 md:px-6 rounded-md hover:bg-[#C6161E] transition-colors font-medium text-sm md:text-base;
+  }
+  .btn-secondary {
+    @apply bg-white text-lifeway-red border border-lifeway-red py-2 px-4 md:py-3 md:px-6 rounded-md hover:bg-lifeway-red/10 transition-colors font-medium text-sm md:text-base;
+  }
+  /* Hide scrollbar for carousel components while maintaining functionality */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
